@@ -21,6 +21,7 @@ import time
 import sys
 import os
 pickling_support.install()
+b_f = open("benchmark.txt","w")
 
 
 class Browser:
@@ -326,7 +327,7 @@ class Browser:
         if self.current_profile_path is not None:
             shutil.rmtree(self.current_profile_path, ignore_errors=True)
 
-
+t  = time.time()
 def BrowserManager(command_queue, status_queue, browser_params,
                    manager_params, crash_recovery):
     """
@@ -385,6 +386,7 @@ def BrowserManager(command_queue, status_queue, browser_params,
         browser_params['profile_path'] = prof_folder
 
         # starts accepting arguments until told to die
+	diff = 0
         while True:
             # no command for now -> sleep to avoid pegging CPU on blocking get
             if command_queue.empty():
@@ -394,8 +396,12 @@ def BrowserManager(command_queue, status_queue, browser_params,
             # reads in the command tuple of form:
             # (command, arg0, arg1, arg2, ..., argN) where N is variable
             command = command_queue.get()
-            logger.info("BROWSER %i: EXECUTING COMMAND: %s" % (
-                browser_params['crawl_id'], str(command)))
+	    b_f.write("BROWSER %i: EXECUTING COMMAND: %s time: %d, time differece: %d\n" % (browser_params['crawl_id'], str(command), time.time() - t, time.time() -t - diff))
+	    b_f.flush()
+ 	    os.fsync(b_f)
+	    diff = time.time() - t	
+            logger.info("testBROWSER %i: EXECUTING COMMAND: %s time: %d" % (
+                browser_params['crawl_id'], str(command), diff))
             # attempts to perform an action and return an OK signal
             # if command fails for whatever reason, tell the TaskManager to
             # kill and restart its worker processes

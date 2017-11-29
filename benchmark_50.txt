@@ -1,0 +1,262 @@
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://123stream.io', 0, 184) time: 14, time differece: 14
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://123stream.io', 0, 185) time: 14, time differece: 14
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://123stream.io', 0, 183) time: 14, time differece: 14
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935082.813804, 183) time: 29, time differece: 15
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935082.813969, 184) time: 30, time differece: 15
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935082.814048, 185) time: 30, time differece: 15
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://3454.com', 0, 187) time: 35, time differece: 4
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://3454.com', 0, 186) time: 35, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://3454.com', 0, 188) time: 35, time differece: 4
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935103.414232, 187) time: 62, time differece: 27
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935103.417463, 188) time: 62, time differece: 27
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935103.414169, 186) time: 63, time differece: 27
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://excite.co.id', 0, 190) time: 68, time differece: 5
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://excite.co.id', 0, 191) time: 68, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://excite.co.id', 0, 189) time: 68, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935136.680551, 189) time: 89, time differece: 21
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935136.680627, 190) time: 91, time differece: 23
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935136.680661, 191) time: 93, time differece: 24
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://vietnamnet.vn', 0, 194) time: 100, time differece: 7
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://vietnamnet.vn', 0, 192) time: 100, time differece: 10
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://vietnamnet.vn', 0, 193) time: 100, time differece: 9
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://canvasvle.co.uk', 0, 197) time: 288, time differece: 288
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://canvasvle.co.uk', 0, 196) time: 288, time differece: 288
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://canvasvle.co.uk', 0, 195) time: 288, time differece: 288
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935356.787715, 196) time: 339, time differece: 51
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935356.787479, 195) time: 340, time differece: 52
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://crowdworks.jp', 0, 199) time: 366, time differece: 366
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://crowdworks.jp', 0, 200) time: 366, time differece: 25
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://crowdworks.jp', 0, 198) time: 366, time differece: 26
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://smfl.co.jp', 0, 201) time: 442, time differece: 442
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://smfl.co.jp', 0, 203) time: 442, time differece: 442
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://smfl.co.jp', 0, 202) time: 442, time differece: 442
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://cinepolisindia.com', 0, 206) time: 462, time differece: 462
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://cinepolisindia.com', 0, 204) time: 462, time differece: 462
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://cinepolisindia.com', 0, 205) time: 462, time differece: 462
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935531.087476, 205) time: 494, time differece: 31
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935531.087276, 204) time: 495, time differece: 32
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935531.087644, 206) time: 496, time differece: 33
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://hop.com', 0, 207) time: 502, time differece: 7
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://hop.com', 0, 208) time: 502, time differece: 5
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://hop.com', 0, 209) time: 502, time differece: 6
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935570.756816, 208) time: 538, time differece: 36
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935570.756756, 207) time: 545, time differece: 43
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935570.757391, 209) time: 549, time differece: 47
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://ef.edu', 0, 212) time: 557, time differece: 8
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://ef.edu', 0, 211) time: 557, time differece: 12
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://ef.edu', 0, 210) time: 558, time differece: 19
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935626.382402, 211) time: 584, time differece: 26
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935626.383708, 212) time: 585, time differece: 27
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511935626.382336, 210) time: 585, time differece: 27
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://concur.com', 0, 214) time: 591, time differece: 6
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://concur.com', 0, 215) time: 591, time differece: 7
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://concur.com', 0, 213) time: 591, time differece: 6
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://foxsports.com.au', 0, 217) time: 779, time differece: 779
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://foxsports.com.au', 0, 216) time: 779, time differece: 779
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://foxsports.com.au', 0, 218) time: 779, time differece: 779
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://prensalibre.com', 0, 221) time: 966, time differece: 966
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://prensalibre.com', 0, 220) time: 966, time differece: 966
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://prensalibre.com', 0, 219) time: 966, time differece: 966
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936035.048971, 219) time: 1026, time differece: 59
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://sunpornolive.com', 0, 222) time: 1044, time differece: 17
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://sunpornolive.com', 0, 223) time: 1044, time differece: 1044
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://sunpornolive.com', 0, 224) time: 1044, time differece: 1044
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936112.672858, 222) time: 1062, time differece: 17
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936112.674027, 223) time: 1063, time differece: 19
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936112.673876, 224) time: 1063, time differece: 19
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://visa.com.ng', 0, 225) time: 1069, time differece: 7
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://visa.com.ng', 0, 227) time: 1069, time differece: 5
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://visa.com.ng', 0, 226) time: 1069, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936137.753216, 227) time: 1103, time differece: 34
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936137.752921, 226) time: 1104, time differece: 35
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936137.752858, 225) time: 1105, time differece: 35
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://lsue.edu', 0, 228) time: 1110, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://lsue.edu', 0, 229) time: 1110, time differece: 6
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://lsue.edu', 0, 230) time: 1110, time differece: 5
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936178.941838, 230) time: 1149, time differece: 38
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936178.941806, 229) time: 1149, time differece: 39
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936178.941748, 228) time: 1149, time differece: 39
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://icaiknowledgegateway.org', 0, 231) time: 1157, time differece: 7
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://icaiknowledgegateway.org', 0, 232) time: 1157, time differece: 7
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://icaiknowledgegateway.org', 0, 233) time: 1157, time differece: 7
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936225.62261, 231) time: 1184, time differece: 27
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936225.622664, 232) time: 1185, time differece: 27
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936225.622693, 233) time: 1191, time differece: 34
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://wataan.com', 0, 234) time: 1198, time differece: 14
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://wataan.com', 0, 235) time: 1198, time differece: 13
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://wataan.com', 0, 236) time: 1198, time differece: 7
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936267.192248, 234) time: 1222, time differece: 24
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936267.192347, 236) time: 1223, time differece: 24
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936267.192311, 235) time: 1223, time differece: 24
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://my.gov.cn', 0, 238) time: 1228, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://my.gov.cn', 0, 239) time: 1228, time differece: 5
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://my.gov.cn', 0, 237) time: 1228, time differece: 5
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://soutalomma.com', 0, 240) time: 1247, time differece: 1247
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://soutalomma.com', 0, 242) time: 1247, time differece: 1247
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://soutalomma.com', 0, 241) time: 1247, time differece: 1247
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936315.728748, 242) time: 1281, time differece: 34
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936315.72844, 240) time: 1282, time differece: 35
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936315.728631, 241) time: 1282, time differece: 35
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://export.gov', 0, 245) time: 1288, time differece: 6
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://export.gov', 0, 244) time: 1288, time differece: 6
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://export.gov', 0, 243) time: 1288, time differece: 6
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936357.03809, 244) time: 1311, time differece: 23
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936357.037881, 243) time: 1313, time differece: 24
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936357.038208, 245) time: 1313, time differece: 24
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://vivud.com', 0, 247) time: 1318, time differece: 4
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://vivud.com', 0, 246) time: 1318, time differece: 6
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://vivud.com', 0, 248) time: 1318, time differece: 4
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936386.5, 246) time: 1351, time differece: 33
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936386.501489, 248) time: 1353, time differece: 35
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936386.500049, 247) time: 1354, time differece: 36
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://symplicity.com', 0, 250) time: 1362, time differece: 8
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://symplicity.com', 0, 251) time: 1362, time differece: 7
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://symplicity.com', 0, 249) time: 1362, time differece: 10
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936430.878431, 251) time: 1395, time differece: 33
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936430.871514, 250) time: 1396, time differece: 33
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936430.871469, 249) time: 1396, time differece: 34
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://gransnet.com', 0, 253) time: 1402, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://gransnet.com', 0, 254) time: 1402, time differece: 6
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://gransnet.com', 0, 252) time: 1402, time differece: 6
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936471.097959, 254) time: 1408, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://infobae.com', 0, 255) time: 1473, time differece: 64
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://infobae.com', 0, 256) time: 1473, time differece: 1473
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://infobae.com', 0, 257) time: 1473, time differece: 1473
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936541.41737, 255) time: 1503, time differece: 30
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936541.417468, 256) time: 1505, time differece: 32
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936541.417684, 257) time: 1505, time differece: 32
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://physicstoday.org', 0, 259) time: 1512, time differece: 6
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://physicstoday.org', 0, 258) time: 1512, time differece: 8
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://physicstoday.org', 0, 260) time: 1512, time differece: 6
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936580.713365, 259) time: 1560, time differece: 48
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936580.713388, 260) time: 1562, time differece: 50
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936580.713324, 258) time: 1563, time differece: 51
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://brightcove.net', 0, 262) time: 1571, time differece: 8
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://brightcove.net', 0, 263) time: 1571, time differece: 7
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://brightcove.net', 0, 261) time: 1571, time differece: 10
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://citymap.guide', 0, 266) time: 1588, time differece: 1588
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://citymap.guide', 0, 265) time: 1588, time differece: 1588
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://citymap.guide', 0, 264) time: 1588, time differece: 1588
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936656.749757, 264) time: 1597, time differece: 9
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936656.750054, 266) time: 1599, time differece: 11
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936656.749941, 265) time: 1600, time differece: 12
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://brandcapital.co.in', 0, 268) time: 1605, time differece: 4
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://brandcapital.co.in', 0, 267) time: 1605, time differece: 7
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://brandcapital.co.in', 0, 269) time: 1605, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936673.744359, 267) time: 1653, time differece: 48
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936673.745451, 269) time: 1654, time differece: 49
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936673.744411, 268) time: 1654, time differece: 49
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://alhaderech.co.il', 0, 271) time: 1664, time differece: 9
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://alhaderech.co.il', 0, 272) time: 1664, time differece: 9
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://alhaderech.co.il', 0, 270) time: 1664, time differece: 10
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936732.658648, 271) time: 1715, time differece: 51
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936732.65859, 270) time: 1719, time differece: 55
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936732.658679, 272) time: 1724, time differece: 59
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://gamovideo.com', 0, 273) time: 1729, time differece: 13
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://gamovideo.com', 0, 274) time: 1729, time differece: 9
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://gamovideo.com', 0, 275) time: 1729, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936797.71836, 274) time: 1735, time differece: 6
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936797.71827, 273) time: 1736, time differece: 6
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936797.718555, 275) time: 1738, time differece: 8
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://thaipost.net', 0, 276) time: 1742, time differece: 6
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://thaipost.net', 0, 277) time: 1742, time differece: 6
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://thaipost.net', 0, 278) time: 1742, time differece: 4
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936810.76957, 276) time: 1798, time differece: 56
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936810.769671, 278) time: 1799, time differece: 56
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://ifixit.com', 0, 280) time: 1823, time differece: 1823
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://ifixit.com', 0, 279) time: 1823, time differece: 24
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://ifixit.com', 0, 281) time: 1823, time differece: 24
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936892.003769, 280) time: 1869, time differece: 46
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936892.003683, 279) time: 1872, time differece: 48
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936892.003986, 281) time: 1874, time differece: 50
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://nakkheeran.in', 0, 284) time: 1877, time differece: 3
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://nakkheeran.in', 0, 283) time: 1877, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://nakkheeran.in', 0, 282) time: 1877, time differece: 7
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936946.115368, 282) time: 1931, time differece: 53
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511936946.11543, 283) time: 1935, time differece: 58
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://mobilevaluer.com', 0, 285) time: 1948, time differece: 17
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://mobilevaluer.com', 0, 286) time: 1948, time differece: 12
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://mobilevaluer.com', 0, 287) time: 1948, time differece: 1948
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937017.243044, 287) time: 1992, time differece: 43
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937017.243018, 286) time: 1994, time differece: 45
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937017.242967, 285) time: 1998, time differece: 49
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://tamug.edu', 0, 289) time: 2003, time differece: 9
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://tamug.edu', 0, 288) time: 2003, time differece: 10
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://tamug.edu', 0, 290) time: 2003, time differece: 5
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937071.892772, 288) time: 2052, time differece: 49
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937071.89285, 290) time: 2057, time differece: 54
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937071.892822, 289) time: 2058, time differece: 55
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://airbnb.es', 0, 293) time: 2069, time differece: 11
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://airbnb.es', 0, 292) time: 2069, time differece: 10
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://airbnb.es', 0, 291) time: 2069, time differece: 16
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://rajassembly.nic.in', 0, 295) time: 2147, time differece: 2147
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://rajassembly.nic.in', 0, 294) time: 2147, time differece: 2147
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://rajassembly.nic.in', 0, 296) time: 2147, time differece: 2147
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937215.940134, 295) time: 2159, time differece: 11
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937215.939937, 294) time: 2160, time differece: 12
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://contentful.com', 0, 298) time: 2213, time differece: 53
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://contentful.com', 0, 297) time: 2213, time differece: 54
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://contentful.com', 0, 299) time: 2213, time differece: 2213
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937282.36785, 298) time: 2252, time differece: 38
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937282.367793, 297) time: 2256, time differece: 42
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937282.36788, 299) time: 2258, time differece: 44
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://kinklive.com', 0, 301) time: 2262, time differece: 5
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://kinklive.com', 0, 300) time: 2262, time differece: 9
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://kinklive.com', 0, 302) time: 2262, time differece: 3
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937330.416261, 300) time: 2313, time differece: 51
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937330.426738, 302) time: 2315, time differece: 53
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937330.416103, 301) time: 2316, time differece: 54
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://zzidc.com', 0, 305) time: 2323, time differece: 7
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://zzidc.com', 0, 303) time: 2323, time differece: 10
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://zzidc.com', 0, 304) time: 2323, time differece: 8
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937392.299453, 304) time: 2382, time differece: 58
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937392.299392, 303) time: 2383, time differece: 59
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://iconarchive.com', 0, 306) time: 2394, time differece: 12
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://iconarchive.com', 0, 307) time: 2394, time differece: 10
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://iconarchive.com', 0, 308) time: 2394, time differece: 2394
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937463.031474, 307) time: 2415, time differece: 20
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937463.031406, 306) time: 2417, time differece: 22
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937463.0315, 308) time: 2419, time differece: 24
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://wowhead.com', 0, 311) time: 2424, time differece: 5
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://wowhead.com', 0, 310) time: 2424, time differece: 7
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://wowhead.com', 0, 309) time: 2424, time differece: 9
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://tell-me.jp', 0, 314) time: 2507, time differece: 2507
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://tell-me.jp', 0, 313) time: 2507, time differece: 2507
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://tell-me.jp', 0, 312) time: 2508, time differece: 2508
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937576.38328, 313) time: 2511, time differece: 3
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937576.383069, 312) time: 2511, time differece: 3
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937576.383373, 314) time: 2512, time differece: 4
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://tokki.com.au', 0, 315) time: 2517, time differece: 5
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://tokki.com.au', 0, 316) time: 2517, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://tokki.com.au', 0, 317) time: 2517, time differece: 5
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937585.765329, 315) time: 2541, time differece: 24
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937585.765385, 316) time: 2542, time differece: 24
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937585.765415, 317) time: 2542, time differece: 25
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://serasaconsumidor.com.br', 0, 318) time: 2548, time differece: 6
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://serasaconsumidor.com.br', 0, 319) time: 2548, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://serasaconsumidor.com.br', 0, 320) time: 2548, time differece: 5
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937616.68025, 318) time: 2567, time differece: 19
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937616.680312, 319) time: 2568, time differece: 19
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937616.681448, 320) time: 2568, time differece: 19
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://airasiafoundation.com', 0, 321) time: 2572, time differece: 4
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://airasiafoundation.com', 0, 323) time: 2572, time differece: 4
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://airasiafoundation.com', 0, 322) time: 2572, time differece: 4
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937641.117847, 322) time: 2614, time differece: 41
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937641.118148, 323) time: 2614, time differece: 42
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937641.117778, 321) time: 2615, time differece: 42
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://hottystop.com', 0, 325) time: 2621, time differece: 6
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://hottystop.com', 0, 326) time: 2621, time differece: 6
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://hottystop.com', 0, 324) time: 2621, time differece: 6
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937689.815276, 325) time: 2637, time differece: 16
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937689.814437, 324) time: 2638, time differece: 16
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937689.814959, 326) time: 2639, time differece: 17
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://crawlability.com', 0, 329) time: 2644, time differece: 5
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://crawlability.com', 0, 328) time: 2644, time differece: 6
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://crawlability.com', 0, 327) time: 2644, time differece: 5
+BROWSER 52: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937712.755853, 327) time: 2647, time differece: 2
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937712.756218, 329) time: 2647, time differece: 2
+BROWSER 54: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937712.755919, 328) time: 2647, time differece: 3
+BROWSER 52: EXECUTING COMMAND: ('GET', 'http://dailyshow.ru', 0, 330) time: 2652, time differece: 4
+BROWSER 53: EXECUTING COMMAND: ('GET', 'http://dailyshow.ru', 0, 332) time: 2652, time differece: 4
+BROWSER 54: EXECUTING COMMAND: ('GET', 'http://dailyshow.ru', 0, 331) time: 2652, time differece: 4
+BROWSER 53: EXECUTING COMMAND: ('DUMP_PROFILE_COOKIES', 1511937720.600711, 332) time: 2711, time differece: 59
