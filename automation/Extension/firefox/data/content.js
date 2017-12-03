@@ -1,4 +1,3 @@
-
 function getPageScript() {
   // Intrumentation injection code is based on privacybadgerfirefox
   // https://github.com/EFForg/privacybadgerfirefox/blob/master/data/fingerprinting.js
@@ -274,7 +273,9 @@ function getPageScript() {
         funcName: callContext.funcName,
         scriptLocEval: callContext.scriptLocEval,
         callStack: callContext.callStack,
-        timeStamp: new Date().toISOString()
+        timeStamp: new Date().toISOString(),
+	inIframe: window.self !== window.top,
+	location: window.location.href
       };
 
       try {
@@ -316,7 +317,9 @@ function getPageScript() {
           funcName: callContext.funcName,
           scriptLocEval: callContext.scriptLocEval,
           callStack: callContext.callStack,
-          timeStamp: new Date().toISOString()
+          timeStamp: new Date().toISOString(),
+	  inIframe: window.self !== window.top,
+	  location: window.location.href
         }
         send('logCall', msg);
       }
@@ -661,7 +664,12 @@ function insertScript(text, data) {
 }
 
 function emitMsg(type, msg) {
-  self.port.emit(type, msg);
+  if (window.self !== window.top) {
+    window.top.postMessage({request: 'emitMsg', type: type, msg: msg}, '*');
+  }
+  else {
+    self.port.emit(type, msg);
+  }
 }
 
 var event_id = Math.random();
@@ -678,6 +686,14 @@ document.addEventListener(event_id, function (e) {
     emitMsg(msgs['type'],msgs['content']);
   }
 });
+
+// Listen for message from iFrame
+window.addEventListener('message', function(event) {
+  console.error("Recevied message from iFrame");
+  if (event.data.request === 'emitMsg') {
+    emitMsg(event.data.type, event.data.msg);
+  }
+}, false)
 
 insertScript(getPageScript(), {
   event_id: event_id,
