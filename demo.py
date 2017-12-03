@@ -1,21 +1,13 @@
 from __future__ import absolute_import
 from automation import TaskManager, CommandSequence
 from six.moves import range
-import time
-import json
 
 # The list of sites that we wish to crawl
 NUM_BROWSERS = 3
-#sites = ['http://www.example.com',
-#         'http://www.princeton.edu',
-#         'http://citp.princeton.edu/']
-#sites = ["http://yallakora.com", "http://songbeng.com", "http://goldenmoustache.com", "http://kanal7avrupa.com", "http://tube8.es", "http://eset.ua", "http://timeout.ru", "http://itar-tass.com", "http://neadodesigns.com", "http://twaig.com"]
-urls = json.loads(open("urls.json").read())
-sites = ["http://"+str(url) for url in urls[:50]]
-print(sites)
+sites = ['http://www.example.com',
+         'http://www.princeton.edu',
+         'http://citp.princeton.edu/']
 
-f = open("total_time.txt", "w")
-start_time = time.time()
 # Loads the manager preference and 3 copies of the default browser dictionaries
 manager_params, browser_params = TaskManager.load_default_params(NUM_BROWSERS)
 
@@ -49,6 +41,4 @@ for site in sites:
     manager.execute_command_sequence(command_sequence, index='**')
 
 # Shuts down the browsers and waits for the data to finish logging
-f.write(str(time.time()-start_time))
-f.close()
 manager.close()
