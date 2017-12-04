@@ -32,6 +32,8 @@ exports.run = function(crawlID, testing) {
         update["operation"] = loggingDB.escapeString(data.operation);
         update["value"] = loggingDB.escapeString(data.value);
         update["time_stamp"] = data.timeStamp;
+        update["in_iframe"] = data.inIframe;
+        update["location"] = data.location;
 
         // Create a json object for function arguments
         // We create an object that maps array positon to argument

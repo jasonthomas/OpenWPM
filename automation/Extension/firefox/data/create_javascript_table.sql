@@ -1,5 +1,7 @@
 CREATE TABLE IF NOT EXISTS javascript(
     id INTEGER PRIMARY KEY,
+    in_iframe BOOLEAN,
+    location TEXT,
     crawl_id INTEGER,
     visit_id INTEGER,
     script_url TEXT,

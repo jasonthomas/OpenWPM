@@ -274,8 +274,8 @@ function getPageScript() {
         scriptLocEval: callContext.scriptLocEval,
         callStack: callContext.callStack,
         timeStamp: new Date().toISOString(),
-	inIframe: window.self !== window.top,
-	location: window.location.href
+        inIframe: window.self !== window.top,
+        location: window.location.href
       };
 
       try {
@@ -318,8 +318,8 @@ function getPageScript() {
           scriptLocEval: callContext.scriptLocEval,
           callStack: callContext.callStack,
           timeStamp: new Date().toISOString(),
-	  inIframe: window.self !== window.top,
-	  location: window.location.href
+          inIframe: window.self !== window.top,
+          location: window.location.href
         }
         send('logCall', msg);
       }
@@ -664,12 +664,7 @@ function insertScript(text, data) {
 }
 
 function emitMsg(type, msg) {
-  if (window.self !== window.top) {
-    window.top.postMessage({request: 'emitMsg', type: type, msg: msg}, '*');
-  }
-  else {
-    self.port.emit(type, msg);
-  }
+  self.port.emit(type, msg); // HACK: remove this if window.self problem is fixed
 }
 
 var event_id = Math.random();
@@ -686,14 +681,6 @@ document.addEventListener(event_id, function (e) {
     emitMsg(msgs['type'],msgs['content']);
   }
 });
-
-// Listen for message from iFrame
-window.addEventListener('message', function(event) {
-  console.error("Recevied message from iFrame");
-  if (event.data.request === 'emitMsg') {
-    emitMsg(event.data.type, event.data.msg);
-  }
-}, false)
 
 insertScript(getPageScript(), {
   event_id: event_id,
