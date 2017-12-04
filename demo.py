@@ -3,7 +3,7 @@ from automation import TaskManager, CommandSequence
 from six.moves import range
 
 # The list of sites that we wish to crawl
-NUM_BROWSERS = 2
+NUM_BROWSERS = 3
 sites = ['http://www.example.com',
          'http://www.princeton.edu',
          'http://citp.princeton.edu/']

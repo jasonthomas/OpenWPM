@@ -664,7 +664,7 @@ function insertScript(text, data) {
 }
 
 function emitMsg(type, msg) {
-  self.port.emit(type, msg); // HACK: remove this if window.self problem is fixed
+  self.port.emit(type, msg);
 }
 
 var event_id = Math.random();
