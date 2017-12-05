@@ -2,7 +2,7 @@ var pageMod = require("sdk/page-mod");
 const data = require("sdk/self").data;
 var loggingDB = require("./loggingdb.js");
 var pageManager = require("./page-manager.js");
-
+var isDumpingToS3 = true;
 exports.run = function(crawlID, testing) {
 
   // Set up tables
@@ -47,8 +47,12 @@ exports.run = function(crawlID, testing) {
           }
           update["arguments"] = loggingDB.escapeString(JSON.stringify(args));
         }
-
-        loggingDB.executeSQL(loggingDB.createInsert("javascript", update), true);
+        if (isDumpingToS3){
+            loggingDB.executeS3(update);
+        }
+        else{
+            loggingDB.executeSQL(loggingDB.createInsert("javascript", update), true);
+        }
       }
       worker.port.on("logCall", function(data){processCallsAndValues(data)});
       worker.port.on("logValue", function(data){processCallsAndValues(data)});

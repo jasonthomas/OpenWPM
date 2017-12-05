@@ -164,6 +164,10 @@ exports.executeSQL = function(statement, async) {
     sqliteAggregator.send(statement);
 };
 
+exports.executeS3 = function(statement) {
+    sqliteAggregator.send([statement,[]]);
+}
+
 exports.saveContent = function(content, contentHash) {
   // send content to levelDBAggregator which stores content
   // deduplicated by contentHash in a levelDB database
