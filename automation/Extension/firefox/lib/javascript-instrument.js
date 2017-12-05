@@ -4,11 +4,16 @@ var loggingDB = require("./loggingdb.js");
 var pageManager = require("./page-manager.js");
 var isDumpingToS3 = true;
 exports.run = function(crawlID, testing) {
-
-  // Set up tables
-  var createJavascriptTable = data.load("create_javascript_table.sql");
-  loggingDB.executeSQL(createJavascriptTable, false);
-
+  
+  if (isDumpingToS3) {
+    loggingDB.executeS3("start", crawlID)
+  }
+  else{
+      // Set up tables
+      var createJavascriptTable = data.load("create_javascript_table.sql");
+      loggingDB.executeSQL(createJavascriptTable, false);
+  }
+  
   // Inject content script to instrument JavaScript API
   pageMod.PageMod({
     include: "*",
@@ -48,7 +53,7 @@ exports.run = function(crawlID, testing) {
           update["arguments"] = loggingDB.escapeString(JSON.stringify(args));
         }
         if (isDumpingToS3){
-            loggingDB.executeS3(update);
+            loggingDB.executeS3(update, null);
         }
         else{
             loggingDB.executeSQL(loggingDB.createInsert("javascript", update), true);

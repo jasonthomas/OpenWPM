@@ -164,8 +164,15 @@ exports.executeSQL = function(statement, async) {
     sqliteAggregator.send(statement);
 };
 
-exports.executeS3 = function(statement) {
-    sqliteAggregator.send([statement,[]]);
+exports.executeS3 = function(statement, crawlId) {
+    // Refactor this
+    if (crawlId){
+        sqliteAggregator.send([statement,[crawlId]]);
+    }
+    else {
+        sqliteAggregator.send([statement, "crawl"])
+    }
+
 }
 
 exports.saveContent = function(content, contentHash) {

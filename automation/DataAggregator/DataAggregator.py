@@ -7,6 +7,12 @@ import sqlite3
 import time
 import six
 from six.moves import range
+import boto3
+import json
+import os
+import hashlib
+
+s3 = boto3.client('s3')
 
 
 def DataAggregator(manager_params, status_queue, commit_batch_size=1000):
@@ -80,7 +86,43 @@ def process_query(query, curr, logger):
         return
     statement = query[0]
     args = list(query[1])
-    for i in range(len(args)):
+
+    # This is the start of a browser
+    if (statement == "start"):
+        # crawl_id
+        crawl_id = args
+        print("crawl_id")
+        print(crawl_id)
+        for fn in os.listdir('.'):
+             if os.path.isfile(fn):
+                    print("====")
+                    print (fn)
+    # When we get javascript data
+    elif (query[1] == "crawl"):
+        print(statement)
+        print(type(statement))
+        crawl_id = statement["crawl_id"]
+        location = statement["location"]
+        # If it is SQL command, drop it
+        if (not location or not crawl_id):
+            print("none")
+            return
+        # Hash URL so that it does not contain invalid char
+        name = hashlib.sha224(location).hexdigest()
+        filename = "{}_{}.json".format(crawl_id, name)
+        s3 = boto3.client('s3')
+        append_write = "w"
+        if (os.path.exists(filename)):
+            append_write = 'a' # append if already exists
+        else:
+		    append_write = 'w' # make a new file if not
+        f = open(filename,append_write)
+        f.write(json.dumps(statement))
+        f.close()
+        # TODO: move this at the end of execution
+        s3.upload_file(filename, "safe-ucosp-2017", "key")
+    
+    '''for i in range(len(args)):
         if isinstance(args[i], six.binary_type):
             args[i] = six.text_type(args[i], errors='ignore')
         elif callable(args[i]):
@@ -94,7 +136,7 @@ def process_query(query, curr, logger):
     except (OperationalError, ProgrammingError, IntegrityError) as e:
         logger.error(
             "Unsupported query:\n%s\n%s\n%s\n%s\n"
-            % (type(e), e, statement, repr(args)))
+            % (type(e), e, statement, repr(args)))'''
 
 
 def drain_queue(sock_queue, curr, logger):
