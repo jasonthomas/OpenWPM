@@ -1,26 +1,21 @@
 import boto3
+import StringIO
 
-dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000")
-table = dynamodb.create_table(
-        TableName='users2',
-        KeySchema=[
-            {
-                'AttributeName':'username',
-                'KeyType': 'HASH'
-            },
-        ],
-        AttributeDefinitions=[
-            {
-                'AttributeName':'username',
-                'AttributeType': 'S'
-                }
-        ],
-        ProvisionedThroughput={
-        'ReadCapacityUnits': 5,
-        'WriteCapacityUnits': 5
-        }
-    )
+# Create an S3 client
+s3 = boto3.resource('s3')
 
-table.meta.client.get_waiter('table_exists').wait(TableName='users')
+my_bucket = s3.Bucket('safe-ucosp-2017')
+for object in my_bucket.objects.all():
+    print(object)
 
-print(table.item_count)
+#s3.Bucket("safe-ucosp-2017")
+#output = StringIO.StringIO()
+#output.write('First line.\n')
+#s3.upload_file("test.txt", "safe-ucosp-2017", "key")
+#s3.upload_fileobj(output, "safe-ucosp-2017", "key")
+
+
+# Download object at bucket-name with key-name to tmp.txt
+#s3.download_file("safe-ucosp-2017", "key", "test_google.txt")
+
+
