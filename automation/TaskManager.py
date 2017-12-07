@@ -212,9 +212,11 @@ class TaskManager:
             # These are properties of each Browser in the browsers list
             screen_res = str(browser.browser_settings['screen_res'])
             ua_string = str(browser.browser_settings['ua_string'])
-            self.sock.send(("UPDATE crawl SET screen_res = ?, ua_string = ? "
-                            "WHERE crawl_id = ?",
-                            (screen_res, ua_string, browser.crawl_id)))
+            # self.sock.send(("UPDATE crawl SET screen_res = ?, ua_string = ? "
+            #                 "WHERE crawl_id = ?",
+            #                 (screen_res, ua_string, browser.crawl_id)))
+            browserInfo = json.parse(json.dumps({browser.crawl_id:{'screen_res':screen_res, 'ua_string':ua_string}}))
+            self.sock.send("browserInfo", browserInfo)
 
     def _manager_watchdog(self):
         """
@@ -346,14 +348,15 @@ class TaskManager:
 
         for browser in self.browsers:
             browser.shutdown_browser(during_init)
-            if failure:
-                self.sock.send(
-                    ("UPDATE crawl SET finished = -1 WHERE crawl_id = ?",
-                     (browser.crawl_id,)))
-            else:
-                self.sock.send(
-                    ("UPDATE crawl SET finished = 1 WHERE crawl_id = ?",
-                     (browser.crawl_id,)))
+            # if failure:
+                # self.sock.send(
+                #     ("UPDATE crawl SET finished = -1 WHERE crawl_id = ?",
+                #      (browser.crawl_id,)))
+            # else:
+                # self.sock.send(
+                #     ("UPDATE crawl SET finished = 1 WHERE crawl_id = ?",
+                #      (browser.crawl_id,)))
+        self.sock.send("FIN", 0)
 
         self.db.close()  # close db connection
         self.sock.close()  # close socket to data aggregator
@@ -480,11 +483,13 @@ class TaskManager:
         self._check_failure_status()
 
         browser.set_visit_id(self.next_visit_id)
-        self.sock.send(
-            ("INSERT INTO site_visits (visit_id, crawl_id, site_url) "
-             "VALUES (?,?,?)", (self.next_visit_id, browser.crawl_id,
-                                command_sequence.url))
-        )
+        # self.sock.send(
+        #     ("INSERT INTO site_visits (visit_id, crawl_id, site_url) "
+        #      "VALUES (?,?,?)", (self.next_visit_id, browser.crawl_id,
+        #                         command_sequence.url))
+        # )
+
+        # self.sock.send("siteVisit", browser.crawl_id, json.dumps({self.next_visit_id}))
         self.next_visit_id += 1
 
         # Start command execution thread

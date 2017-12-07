@@ -93,7 +93,18 @@ def process_query(query, curr, logger):
         crawl_id = args
         print("crawl_id")
         print(crawl_id)
-        
+    elif (statement == "browserInfo"):
+        filename = 'browserInfo'
+        if (os.path.exists(filename)):
+            f = open(filename, 'a')
+            f.write(',')
+        else:
+            f = open(filename, 'w')
+            f.write('{')
+        f.write(args[0])
+        f.close
+    elif (statement == "FIN"):
+        pass
     # When we get javascript data
     elif (query[1] == "crawl"):
         crawl_id = statement["crawl_id"]
@@ -106,25 +117,36 @@ def process_query(query, curr, logger):
         name = hashlib.sha224(location).hexdigest()
         filename = "{}_{}.json".format(crawl_id, name)
         s3 = boto3.client('s3')
-        append_write = "w"
+        # append_write = "w"
+        # if (os.path.exists(filename)):
+        #     append_write = 'a' # append if already exists
+        # else:
+		#     append_write = 'w' # make a new file if not
+        # f = open(filename,append_write)
+        # f.write(json.dumps(statement))
+        # f.close()
         if (os.path.exists(filename)):
-            append_write = 'a' # append if already exists
+            f = open(filename, 'a')
+            f.write(',')
         else:
-		    append_write = 'w' # make a new file if not
-        f = open(filename,append_write)
+            f = open(filename, 'w')
+            f.write('{')
         f.write(json.dumps(statement))
-        f.close()
+        f.close
         for fn in os.listdir('.'):
            print("MARK")
            print(fn)
            print(filename)
            if os.path.isfile(fn):
-             if fn.startswith(str(crawl_id)):
-                if (fn != filename):
-                    print("file found zzz")
-                    s3.upload_file(fn, "safe-ucosp-2017", fn)
-                    os.remove(fn)
-                    print("removed yyy")
+             if fn.startswith(str(crawl_id) && fn != filename):
+                print("file found zzz")
+                f = fopen(fn, 'a')
+                f.write('}')
+                f.close()
+                s3.upload_file(fn, "safe-ucosp-2017", fn)
+                os.remove(fn)
+                print("removed yyy")
+
 
     '''for i in range(len(args)):
         if isinstance(args[i], six.binary_type):
@@ -149,3 +171,12 @@ def drain_queue(sock_queue, curr, logger):
     while not sock_queue.empty():
         query = sock_queue.get()
         process_query(query, curr, logger)
+    print('Clean up')
+    s3 = boto3.client('s3')
+    for fn in os.listdir('.'):
+        if (fn[-5:] == '.json'):
+            f = fopen(fn, 'a')
+            f.write('}')
+            f.close()
+            s3.upload_file(fn, "safe-ucosp-2017", fn)
+            os.remove(fn)
