@@ -90,7 +90,6 @@ def process_query(query, curr, logger):
     if (statement == "start"):
         # crawl_id
         crawl_id = args
-<<<<<<< HEAD
         print("crawl_id")
         print(crawl_id)
     elif (statement == "browserInfo"):
@@ -105,9 +104,6 @@ def process_query(query, curr, logger):
         f.close
     elif (statement == "FIN"):
         pass
-=======
-        
->>>>>>> 92f70b976a8a4030466a8b340fd0ccb052cbb065
     # When we get javascript data
     elif (query[1] == "crawl"):
         crawl_id = statement["crawl_id"]
@@ -137,7 +133,6 @@ def process_query(query, curr, logger):
         f.close
         for fn in os.listdir('.'):
            if os.path.isfile(fn):
-<<<<<<< HEAD
              if fn.startswith(str(crawl_id) && fn != filename):
                 print("file found zzz")
                 f = fopen(fn, 'a')
@@ -147,12 +142,6 @@ def process_query(query, curr, logger):
                 os.remove(fn)
                 print("removed yyy")
 
-=======
-             if fn.startswith(str(crawl_id)):
-                if (fn != filename):
-                    s3.upload_file(fn, "safe-ucosp-2017", fn)
-                    os.remove(fn)
->>>>>>> 92f70b976a8a4030466a8b340fd0ccb052cbb065
 
     '''for i in range(len(args)):
         if isinstance(args[i], six.binary_type):
