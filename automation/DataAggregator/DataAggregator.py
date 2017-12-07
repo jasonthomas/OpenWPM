@@ -86,13 +86,10 @@ def process_query(query, curr, logger):
         return
     statement = query[0]
     args = list(query[1])
-    print(statement)
     # This is the start of a browser
     if (statement == "start"):
         # crawl_id
         crawl_id = args
-        print("crawl_id")
-        print(crawl_id)
         
     # When we get javascript data
     elif (query[1] == "crawl"):
@@ -100,7 +97,6 @@ def process_query(query, curr, logger):
         location = statement["location"]
         # If it is SQL command, drop it
         if (not location or not crawl_id):
-            print("none")
             return
         # Hash URL so that it does not contain invalid char
         name = hashlib.sha224(location).hexdigest()
@@ -115,16 +111,11 @@ def process_query(query, curr, logger):
         f.write(json.dumps(statement))
         f.close()
         for fn in os.listdir('.'):
-           print("MARK")
-           print(fn)
-           print(filename)
            if os.path.isfile(fn):
              if fn.startswith(str(crawl_id)):
                 if (fn != filename):
-                    print("file found zzz")
                     s3.upload_file(fn, "safe-ucosp-2017", fn)
                     os.remove(fn)
-                    print("removed yyy")
 
     '''for i in range(len(args)):
         if isinstance(args[i], six.binary_type):
