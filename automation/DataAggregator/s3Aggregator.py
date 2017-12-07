@@ -2,8 +2,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from ..SocketInterface import serversocket
 from ..MPLogger import loggingclient
-from sqlite3 import (OperationalError, ProgrammingError, IntegrityError)
-import sqlite3
 import time
 import six
 from six.moves import range
@@ -12,10 +10,9 @@ import json
 import os
 import hashlib
 
-s3 = boto3.client('s3')
 
 
-def DataAggregator(manager_params, status_queue, commit_batch_size=1000):
+def S3Aggregator(manager_params, status_queue, commit_batch_size=1000):
     """
      Receives SQL queries from other processes and writes them to the central
      database. Executes queries until being told to die (then it will finish
@@ -28,10 +25,8 @@ def DataAggregator(manager_params, status_queue, commit_batch_size=1000):
         made before a commit (used for speedup)
     """
 
-    # sets up DB connection
-    db_path = manager_params['database_name']
-    db = sqlite3.connect(db_path, check_same_thread=False)
-    curr = db.cursor()
+    # sets up s3 connection
+    s3 = boto3.client('s3')
 
     # sets up logging connection
     logger = loggingclient(*manager_params['logger_address'])
@@ -57,7 +52,7 @@ def DataAggregator(manager_params, status_queue, commit_batch_size=1000):
 
             # commit every five seconds to avoid blocking the db for too long
             if counter > 0 and time.time() - commit_time > 5:
-                db.commit()
+                .commit()
             continue
 
         # process query
@@ -86,79 +81,45 @@ def process_query(query, curr, logger):
         return
     statement = query[0]
     args = list(query[1])
+    print(statement)
     # This is the start of a browser
     if (statement == "start"):
         # crawl_id
         crawl_id = args
         print("crawl_id")
         print(crawl_id)
-    elif (statement == "browserInfo"):
-        filename = 'browserInfo'
-        if (os.path.exists(filename)):
-            f = open(filename, 'a')
-            f.write(',')
-        else:
-            f = open(filename, 'w')
-            f.write('{')
-        f.write(args[0])
-        f.close
-    elif (statement == "FIN"):
-        pass
+
     # When we get javascript data
     elif (query[1] == "crawl"):
         crawl_id = statement["crawl_id"]
         location = statement["location"]
         # If it is SQL command, drop it
         if (not location or not crawl_id):
+            print("none")
             return
         # Hash URL so that it does not contain invalid char
         name = hashlib.sha224(location).hexdigest()
         filename = "{}_{}.json".format(crawl_id, name)
         s3 = boto3.client('s3')
-        # append_write = "w"
-        # if (os.path.exists(filename)):
-        #     append_write = 'a' # append if already exists
-        # else:
-		#     append_write = 'w' # make a new file if not
-        # f = open(filename,append_write)
-        # f.write(json.dumps(statement))
-        # f.close()
+        append_write = "w"
         if (os.path.exists(filename)):
-            f = open(filename, 'a')
-            f.write(',')
+            append_write = 'a' # append if already exists
         else:
-            f = open(filename, 'w')
-            f.write('{')
+		    append_write = 'w' # make a new file if not
+        f = open(filename,append_write)
         f.write(json.dumps(statement))
-        f.close
+        f.close()
         for fn in os.listdir('.'):
+           print("MARK")
+           print(fn)
+           print(filename)
            if os.path.isfile(fn):
-             if fn.startswith(str(crawl_id) and fn != filename):
-                print("file found zzz")
-                f = fopen(fn, 'a')
-                f.write('}')
-                f.close()
-                s3.upload_file(fn, "safe-ucosp-2017", fn)
-                os.remove(fn)
-                print("removed yyy")
-
-
-    '''for i in range(len(args)):
-        if isinstance(args[i], six.binary_type):
-            args[i] = six.text_type(args[i], errors='ignore')
-        elif callable(args[i]):
-            args[i] = six.text_type(args[i])
-    try:
-        if len(args) == 0:
-            curr.execute(statement)
-        else:
-            curr.execute(statement, args)
-
-    except (OperationalError, ProgrammingError, IntegrityError) as e:
-        logger.error(
-            "Unsupported query:\n%s\n%s\n%s\n%s\n"
-            % (type(e), e, statement, repr(args)))'''
-
+             if fn.startswith(str(crawl_id)):
+                if (fn != filename):
+                    print("file found zzz")
+                    s3.upload_file(fn, "safe-ucosp-2017", fn)
+                    os.remove(fn)
+                    print("removed yyy")
 
 def drain_queue(sock_queue, curr, logger):
     """ Ensures queue is empty before closing """
@@ -166,12 +127,3 @@ def drain_queue(sock_queue, curr, logger):
     while not sock_queue.empty():
         query = sock_queue.get()
         process_query(query, curr, logger)
-    print('Clean up')
-    s3 = boto3.client('s3')
-    for fn in os.listdir('.'):
-        if (fn[-5:] == '.json'):
-            f = fopen(fn, 'a')
-            f.write('}')
-            f.close()
-            s3.upload_file(fn, "safe-ucosp-2017", fn)
-            os.remove(fn)

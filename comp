@@ -1,0 +1,2 @@
+cd automation/Extension/firefox/
+jpm xpi
