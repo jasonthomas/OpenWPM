@@ -18,6 +18,7 @@ tabulate
 tblib
 tld
 pillow
+boto3
 
 # Python 3 is not fully supported prior to Selenium 3.x.
 # Geckodriver 0.15.0 requires Selenium 3.4+, and doesn't

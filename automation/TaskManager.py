@@ -216,7 +216,7 @@ class TaskManager:
             #                 "WHERE crawl_id = ?",
             #                 (screen_res, ua_string, browser.crawl_id)))
             browserInfo = json.dumps({browser.crawl_id:{'screen_res':screen_res, 'ua_string':ua_string}})
-            self.sock.send("browserInfo", browserInfo)
+ 	    self.sock.send(("browserInfo", browserInfo))
 
     def _manager_watchdog(self):
         """
@@ -356,7 +356,7 @@ class TaskManager:
                 # self.sock.send(
                 #     ("UPDATE crawl SET finished = 1 WHERE crawl_id = ?",
                 #      (browser.crawl_id,)))
-        self.sock.send("FIN", 0)
+        #self.sock.send(("FIN", []))
 
         self.db.close()  # close db connection
         self.sock.close()  # close socket to data aggregator

@@ -85,7 +85,7 @@ def process_query(query, curr, logger):
         print("ERROR: Query is not the correct length")
         return
     statement = query[0]
-    args = list(query[1])
+    args = query[1]
     # This is the start of a browser
     if (statement == "start"):
         # crawl_id
@@ -93,7 +93,7 @@ def process_query(query, curr, logger):
         print("crawl_id")
         print(crawl_id)
     elif (statement == "browserInfo"):
-        filename = 'browserInfo'
+        filename = 'browserInfo.json'
         if (os.path.exists(filename)):
             f = open(filename, 'a')
             f.write(',')
@@ -112,6 +112,7 @@ def process_query(query, curr, logger):
         if (not location or not crawl_id):
             return
         # Hash URL so that it does not contain invalid char
+        print(location)
         name = hashlib.sha224(location).hexdigest()
         filename = "{}_{}.json".format(crawl_id, name)
         s3 = boto3.client('s3')
@@ -131,16 +132,15 @@ def process_query(query, curr, logger):
             f.write('{')
         f.write(json.dumps(statement))
         f.close
+        # print(filename)
         for fn in os.listdir('.'):
            if os.path.isfile(fn):
-             if fn.startswith(str(crawl_id) and fn != filename):
-                print("file found zzz")
-                f = fopen(fn, 'a')
+            if (fn.startswith(str(crawl_id)) and fn != filename):
+                f = open(fn, 'a')
                 f.write('}')
                 f.close()
                 s3.upload_file(fn, "safe-ucosp-2017", fn)
                 os.remove(fn)
-                print("removed yyy")
 
 
     '''for i in range(len(args)):
@@ -169,9 +169,11 @@ def drain_queue(sock_queue, curr, logger):
     print('Clean up')
     s3 = boto3.client('s3')
     for fn in os.listdir('.'):
+        #print(fn)
         if (fn[-5:] == '.json'):
-            f = fopen(fn, 'a')
+            f = open(fn, 'a')
             f.write('}')
             f.close()
             s3.upload_file(fn, "safe-ucosp-2017", fn)
             os.remove(fn)
+	    # print("{} removed".format(fn))
