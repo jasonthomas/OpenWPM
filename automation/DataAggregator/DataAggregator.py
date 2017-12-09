@@ -112,7 +112,7 @@ def process_query(query, curr, logger):
         if (not location or not crawl_id):
             return
         # Hash URL so that it does not contain invalid char
-        print(location)
+        # print(location)
         name = hashlib.sha224(location).hexdigest()
         filename = "{}_{}.json".format(crawl_id, name)
         s3 = boto3.client('s3')
@@ -140,11 +140,13 @@ def process_query(query, curr, logger):
                 f.write('}')
                 f.close()
                 try:
+		    print("putting {}".format(fn))
                     s3.upload_file(fn, "safe-ucosp-2017", fn)
                     os.remove(fn)
-                except e:
-                    print(Error on putting fn to s3)
-
+                except:
+		    print('cur: {}'.format(location))
+                    print('Error: putting {} to s3'.format(fn))
+		    os.remove(fn)
 
     '''for i in range(len(args)):
         if isinstance(args[i], six.binary_type):
@@ -178,8 +180,10 @@ def drain_queue(sock_queue, curr, logger):
             f.write('}')
             f.close()
             try:
+                print("putting {}".format(fn))
                 s3.upload_file(fn, "safe-ucosp-2017", fn)
                 os.remove(fn)
-            except e:
-                print(Error on putting fn to s3)
-	    # print("{} removed".format(fn))
+            except:
+                print('Error: putting {} to s3'.format(fn))
+	        print("{} removed".format(fn))
+                os.remove(fn)
