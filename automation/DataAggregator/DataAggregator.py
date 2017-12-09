@@ -93,14 +93,14 @@ def process_query(query, curr, logger):
         print("crawl_id")
         print(crawl_id)
     elif (statement == "browserInfo"):
-        filename = 'browserInfo.json'
+        filename = 'browserInfo_{}.json'.format(args[0])
         if (os.path.exists(filename)):
             f = open(filename, 'a')
             f.write(',')
         else:
             f = open(filename, 'w')
             f.write('{')
-        f.write(args[0])
+        f.write(args[1])
         f.close
     elif (statement == "FIN"):
         pass
@@ -139,8 +139,11 @@ def process_query(query, curr, logger):
                 f = open(fn, 'a')
                 f.write('}')
                 f.close()
-                s3.upload_file(fn, "safe-ucosp-2017", fn)
-                os.remove(fn)
+                try:
+                    s3.upload_file(fn, "safe-ucosp-2017", fn)
+                    os.remove(fn)
+                except e:
+                    print(Error on putting fn to s3)
 
 
     '''for i in range(len(args)):
@@ -174,6 +177,9 @@ def drain_queue(sock_queue, curr, logger):
             f = open(fn, 'a')
             f.write('}')
             f.close()
-            s3.upload_file(fn, "safe-ucosp-2017", fn)
-            os.remove(fn)
+            try:
+                s3.upload_file(fn, "safe-ucosp-2017", fn)
+                os.remove(fn)
+            except e:
+                print(Error on putting fn to s3)
 	    # print("{} removed".format(fn))
