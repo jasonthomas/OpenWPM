@@ -1,12 +1,45 @@
 from __future__ import absolute_import
 from automation import TaskManager, CommandSequence
 from six.moves import range
+import boto3
+import random
+from io import BytesIO
 
 # The list of sites that we wish to crawl
 NUM_BROWSERS = 1
-sites = [#'http://www.example.com',
-         'http://www.princeton.edu',
-         'http://citp.princeton.edu/']
+
+# sites = []
+
+# with open('data/list.txt') as f:
+#     for site in f.readlines():
+#         sites.append(site.strip())
+
+
+s3 = boto3.client('s3', region_name='us-east-1')
+bucket_name = 'safe-ucosp-2017'
+
+
+paginator = s3.get_paginator('list_objects_v2')
+page_iterator = paginator.paginate(Bucket=bucket_name,
+                                   Prefix='crawl/')
+
+keys = []
+for page in page_iterator:
+    for content in page['Contents']:
+        keys.append(content['Key'])
+
+key = keys[random.randrange(len(keys))]
+print key
+
+obj = s3.get_object(Bucket=bucket_name, Key=key)
+
+sites = []
+
+for url in BytesIO(obj['Body'].read()):
+    sites.append(url.strip())
+
+s3.delete_object(Bucket=bucket_name, Key=key)
+
 # Loads the manager preference and 3 copies of the default browser dictionaries
 manager_params, browser_params = TaskManager.load_default_params(NUM_BROWSERS)
 
