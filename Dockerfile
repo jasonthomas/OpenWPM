@@ -10,7 +10,7 @@ FROM ubuntu:18.04
 #=============================================================
 
 RUN apt-get -y update
-RUN apt-get -y install sudo curl gnupg
+RUN apt-get -y install sudo curl gnupg wget
 
 # Install nodejs and npm from nodesource
 RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -24,6 +24,9 @@ RUN sudo apt-get update && sudo apt-get install -y yarn
 RUN sudo mkdir /opt/OpenWPM/
 
 ADD automation /opt/OpenWPM/automation/
+# RUN wget https://public-data.telemetry.mozilla.org/openwpm/openwpm.xpi
+# COPY openwpm.xpi /opt/OpenWPM//automation/Extension/firefox/
+
 ADD requirements.txt /opt/OpenWPM/
 ADD VERSION /opt/OpenWPM/
 ADD install.sh /opt/OpenWPM/
@@ -49,3 +52,5 @@ RUN sudo chown -R user:user /opt/OpenWPM/
 
 RUN cd /opt/OpenWPM/ \
 && ./install.sh --no-flash
+ADD https://public-data.telemetry.mozilla.org/openwpm/openwpm.xpi /opt/OpenWPM//automation/Extension/firefox/
+CMD python /opt/OpenWPM/demo.py
