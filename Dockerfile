@@ -53,4 +53,5 @@ RUN sudo chown -R user:user /opt/OpenWPM/
 RUN cd /opt/OpenWPM/ \
 && ./install.sh --no-flash
 ADD https://public-data.telemetry.mozilla.org/openwpm/openwpm.xpi /opt/OpenWPM//automation/Extension/firefox/
+RUN sudo chmod 644 /opt/OpenWPM//automation/Extension/firefox/openwpm.xpi
 CMD python /opt/OpenWPM/demo.py

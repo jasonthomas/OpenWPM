@@ -1,7 +1,7 @@
+from __future__ import absolute_import
 import boto3
 import random
 import os
-from __future__ import absolute_import
 
 from six.moves import range
 
@@ -11,9 +11,9 @@ from io import BytesIO
 
 NUM_BROWSERS = 1
 
-S3_BUCKET = os.environ('S3_BUCKET')
-S3_CRAWL_QUEUE = os.environ('S3_CRAWL_QUEUE')
-S3_DIRECTORY = os.environ('S3_DIRECTORY')
+S3_BUCKET = os.getenv('S3_BUCKET')
+S3_CRAWL_QUEUE = os.getenv('S3_CRAWL_QUEUE')
+S3_DIRECTORY = os.getenv('S3_DIRECTORY')
 
 # Get lists of sites from files in S3
 s3 = boto3.client('s3', region_name='us-east-1')
@@ -65,16 +65,8 @@ manager = TaskManager.TaskManager(manager_params, browser_params)
 
 # Visits the sites with all browsers simultaneously
 for site in sites:
-    command_sequence = CommandSequence.CommandSequence(site)
-
-    # Start by visiting the page
-    command_sequence.get(sleep=0, timeout=60)
-
-    # dump_profile_cookies/dump_flash_cookies closes the current tab.
-    command_sequence.dump_profile_cookies(120)
-
-    # index='**' synchronizes visits between the three browsers
-    manager.execute_command_sequence(command_sequence, index='**')
-
+    command_sequence = CommandSequence.CommandSequence(site, reset=True)
+    command_sequence.get(sleep=10, timeout=60)
+    manager.execute_command_sequence(command_sequence)
 # Shuts down the browsers and waits for the data to finish logging
 manager.close()
