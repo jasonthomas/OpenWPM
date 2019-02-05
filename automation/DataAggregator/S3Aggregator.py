@@ -123,7 +123,7 @@ class S3Listener(BaseListener):
     def _exists_on_s3(self, filename):
         """Check if `filename` already exists on S3"""
         # Check local filename cache
-        if filename in self._s3_content_cache:
+        if filename.split('/', 1)[1] in self._s3_content_cache:
             self.logger.debug(
                 "File `%s` found in content cache." % filename)
             return True
@@ -138,7 +138,8 @@ class S3Listener(BaseListener):
                 raise
 
         # Add filename to local cache to avoid remote lookups on next request
-        self._s3_content_cache.add(filename)
+        # We strip the bucket name as its the same for all files
+        self._s3_content_cache.add(filename.split('/', 1)[1])
         return True
 
     def _write_str_to_s3(self, string, filename,
@@ -164,8 +165,9 @@ class S3Listener(BaseListener):
             self.logger.debug(
                 "Successfully uploaded file `%s` to S3." % filename)
             # Cache the filenames that are already on S3
+            # We strip the bucket name as its the same for all files
             if skip_if_exists:
-                self._s3_content_cache.add(filename)
+                self._s3_content_cache.add(filename.split('/', 1)[1])
         except Exception as e:
             self.logger.error(
                 "Exception while uploading %s\n%s\n%s" % (
