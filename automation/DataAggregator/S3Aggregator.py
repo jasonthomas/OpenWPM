@@ -22,6 +22,7 @@ from .parquet_schema import PQ_SCHEMAS
 CACHE_SIZE = 500
 SITE_VISITS_INDEX = '_site_visits_index'
 CONTENT_DIRECTORY = 'content'
+CONFIG_DIRECTORY = 'config'
 
 
 def listener_process_runner(
@@ -61,6 +62,7 @@ class S3Listener(BaseListener):
         self._batches = dict()  # maps table_name to a list of batches
         self._instance_id = instance_id
         self._bucket = manager_params['s3_bucket']
+        self._s3_content_cache = set()  # cache of filenames already uploaded
         self._s3 = boto3.client('s3')
         self._s3_resource = boto3.resource('s3')
         self._fs = s3fs.S3FileSystem()
@@ -120,6 +122,13 @@ class S3Listener(BaseListener):
 
     def _exists_on_s3(self, filename):
         """Check if `filename` already exists on S3"""
+        # Check local filename cache
+        if filename in self._s3_content_cache:
+            self.logger.debug(
+                "File `%s` found in content cache." % filename)
+            return True
+
+        # Check S3
         try:
             self._s3_resource.Object(self._bucket, filename).load()
         except ClientError as e:
@@ -127,6 +136,9 @@ class S3Listener(BaseListener):
                 return False
             else:
                 raise
+
+        # Add filename to local cache to avoid remote lookups on next request
+        self._s3_content_cache.add(filename)
         return True
 
     def _write_str_to_s3(self, string, filename,
@@ -151,6 +163,9 @@ class S3Listener(BaseListener):
             self._s3.upload_fileobj(out_f, self._bucket, filename)
             self.logger.debug(
                 "Successfully uploaded file `%s` to S3." % filename)
+            # Cache the filenames that are already on S3
+            if skip_if_exists:
+                self._s3_content_cache.add(filename)
         except Exception as e:
             self.logger.error(
                 "Exception while uploading %s\n%s\n%s" % (
@@ -296,8 +311,8 @@ class S3Aggregator(BaseAggregator):
         """Save configuration details for this crawl to the database"""
 
         # Save config keyed by task id
-        fname = "%s/instance-%s_configuration.json" % (
-            self.dir, self._instance_id)
+        fname = "%s/%s/instance-%s_configuration.json" % (
+            self.dir, CONFIG_DIRECTORY, self._instance_id)
 
         # Config parameters for update
         out = dict()
