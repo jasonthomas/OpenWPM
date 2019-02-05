@@ -43,3 +43,5 @@ RUN sudo chown -R user:user /opt/OpenWPM/
 
 RUN cd /opt/OpenWPM/ \
      && ./install.sh --no-flash
+
+CMD python /opt/OpenWPM/demo.py
